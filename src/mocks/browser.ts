@@ -5,7 +5,11 @@ import {
   createUser, 
   updateUser, 
   deleteUser, 
-  getPosts 
+  getPosts,
+  searchPosts,
+  networkErrorTest,
+  serverErrorTest,
+  slowResponseTest
 } from './handlers'
 
 // MSW Worker를 설정합니다
@@ -15,5 +19,9 @@ export const worker = setupWorker(
   createUser,
   updateUser,
   deleteUser,
-  getPosts
+  getPosts,
+  searchPosts,
+  networkErrorTest,
+  serverErrorTest,
+  slowResponseTest
 )

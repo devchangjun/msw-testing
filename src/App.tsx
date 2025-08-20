@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import UserList from "./components/UserList";
 import PostList from "./components/PostList";
+import MSWTestPanel from "./components/MSWTestPanel";
 import "./App.css";
 
 const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"users" | "posts">("users");
+  const [activeTab, setActiveTab] = useState<"users" | "posts" | "test">("users");
 
   return (
     <div className="App">
@@ -20,9 +21,14 @@ const App: React.FC = () => {
         <button className={`nav-button ${activeTab === "posts" ? "active" : ""}`} onClick={() => setActiveTab("posts")}>
           게시물 목록
         </button>
+        <button className={`nav-button ${activeTab === "test" ? "active" : ""}`} onClick={() => setActiveTab("test")}>
+          MSW 테스트
+        </button>
       </nav>
 
-      <main className="App-main">{activeTab === "users" ? <UserList /> : <PostList />}</main>
+      <main className="App-main">
+        {activeTab === "users" ? <UserList /> : activeTab === "posts" ? <PostList /> : <MSWTestPanel />}
+      </main>
 
       <footer className="App-footer">
         <p>
