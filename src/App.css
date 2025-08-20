@@ -1,0 +1,97 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.App-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.App-nav {
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  color: #1976d2;
+}
+
+.nav-button.active {
+  color: #1976d2;
+  border-bottom-color: #1976d2;
+}
+
+.App-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.App-footer {
+  background-color: #fafafa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.App-footer p {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .App-main {
+    padding: 1rem;
+  }
+  
+  .App-nav {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .nav-button {
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 3px solid transparent;
+  }
+  
+  .nav-button.active {
+    border-bottom-color: transparent;
+    border-right-color: #1976d2;
+  }
+}

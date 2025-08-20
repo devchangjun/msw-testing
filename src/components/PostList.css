@@ -1,0 +1,89 @@
+.post-list-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.post-list-container h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.post-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.post-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #1976d2;
+  transition: all 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  margin-bottom: 1rem;
+}
+
+.post-header h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.post-content {
+  margin-bottom: 1rem;
+}
+
+.post-content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.post-footer {
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+}
+
+.post-date {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+}
+
+.no-posts p {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .post-list-container {
+    padding: 1rem;
+  }
+  
+  .post-card {
+    padding: 1rem;
+  }
+  
+  .post-header h3 {
+    font-size: 1.1rem;
+  }
+}

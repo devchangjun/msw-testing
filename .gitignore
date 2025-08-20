@@ -1,0 +1,10 @@
+/node_modules
+/dist
+/build
+/public/mockServiceWorker.js
+/public/mockServiceWorker.js.map
+/public/mockServiceWorker.js.map.gz
+/public/mockServiceWorker.js.map.br
+/public/mockServiceWorker.js.map.br.gz
+/public/mockServiceWorker.js.map.br.gz.br
+/public/mockServiceWorker.js.map.br.gz.br.gz
