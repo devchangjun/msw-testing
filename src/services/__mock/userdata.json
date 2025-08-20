@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "김철수",
+      "email": "kim@example.com",
+      "role": "admin",
+      "profile": {
+        "bio": "시니어 개발자",
+        "location": "서울",
+        "joinDate": "2020-01-15"
+      }
+    },
+    {
+      "id": 2,
+      "name": "이영희",
+      "email": "lee@example.com",
+      "role": "user",
+      "profile": {
+        "bio": "프론트엔드 개발자",
+        "location": "부산",
+        "joinDate": "2021-03-20"
+      }
+    },
+    {
+      "id": 3,
+      "name": "박민수",
+      "email": "park@example.com",
+      "role": "user",
+      "profile": {
+        "bio": "백엔드 개발자",
+        "location": "대구",
+        "joinDate": "2022-07-10"
+      }
+    },
+    {
+      "id": 4,
+      "name": "아이유",
+      "email": "iu@example.com",
+      "role": "user",
+      "profile": {
+        "bio": "프론트엔드 개발자",
+        "location": "부산",
+        "joinDate": "2021-03-20"
+      }
+    },
+    {
+      "id": 5,
+      "name": "김아이유",
+      "email": "kimiu@example.com",
+      "role": "admin",
+      "profile": {
+        "bio": "시니어 개발자",
+        "location": "서울",
+        "joinDate": "2020-01-15"
+      }
+    }
+  ]
+}

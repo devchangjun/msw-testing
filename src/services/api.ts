@@ -1,4 +1,5 @@
 import { User, CreateUserRequest, UpdateUserRequest } from "../types";
+import mockData from "../services/__mock/userdata.json";
 
 const API_BASE_URL = "/api";
 
@@ -19,22 +20,13 @@ export const userApi = {
     if (process.env.NODE_ENV === "development") {
       console.log("MSW 대신 임시 모킹 사용:", query);
 
-      // 임시 모킹 데이터
-      const mockUsers: User[] = [
-        { id: 1, name: "김철수", email: "kim@example.com", role: "admin" as const },
-        { id: 2, name: "이영희", email: "lee@example.com", role: "user" as const },
-        { id: 3, name: "박민수", email: "park@example.com", role: "user" as const },
-        { id: 4, name: "아이유", email: "iu@example.com", role: "user" as const },
-        { id: 5, name: "김아이유", email: "kimiu@example.com", role: "admin" as const },
-      ];
-
       // 검색어에 맞는 사용자 필터링
-      const filteredUsers = mockUsers.filter((user) => user.name.toLowerCase().includes(query.toLowerCase()));
+      const filteredUsers = mockData.users.filter((user) => user.name.toLowerCase().includes(query.toLowerCase()));
 
       // 실제 API 호출과 유사한 지연 시간
       await new Promise((resolve) => setTimeout(resolve, 300));
 
-      return filteredUsers;
+      return filteredUsers as User[];
     }
 
     // 실제 API 호출

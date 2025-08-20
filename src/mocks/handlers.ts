@@ -1,4 +1,5 @@
 import { http, HttpResponse, delay } from "msw";
+import mockData from "../services/__mock/userdata.json";
 
 const handlers = {
   // 사용자 목록을 가져오는 API
@@ -6,38 +7,7 @@ const handlers = {
     // 실제 API와 유사한 지연 시간 추가
     await delay(500);
 
-    return HttpResponse.json([
-      {
-        id: 1,
-        name: "김철수",
-        email: "kim@example.com",
-        role: "admin",
-      },
-      {
-        id: 2,
-        name: "이영희",
-        email: "lee@example.com",
-        role: "user",
-      },
-      {
-        id: 3,
-        name: "박민수",
-        email: "park@example.com",
-        role: "user",
-      },
-      {
-        id: 4,
-        name: "아이유",
-        email: "iu@example.com",
-        role: "user",
-      },
-      {
-        id: 5,
-        name: "김아이유",
-        email: "kimiu@example.com",
-        role: "admin",
-      },
-    ]);
+    return HttpResponse.json(mockData.users);
   }),
 
   // 사용자 검색 API
@@ -51,40 +21,7 @@ const handlers = {
       return HttpResponse.json({ users: [] });
     }
 
-    const allUsers = [
-      {
-        id: 1,
-        name: "김철수",
-        email: "kim@example.com",
-        role: "admin",
-      },
-      {
-        id: 2,
-        name: "이영희",
-        email: "lee@example.com",
-        role: "user",
-      },
-      {
-        id: 3,
-        name: "박민수",
-        email: "park@example.com",
-        role: "user",
-      },
-      {
-        id: 4,
-        name: "아이유",
-        email: "iu@example.com",
-        role: "user",
-      },
-      {
-        id: 5,
-        name: "김아이유",
-        email: "kimiu@example.com",
-        role: "admin",
-      },
-    ];
-
-    const filteredUsers = allUsers.filter((user) => user.name.toLowerCase().includes(query.toLowerCase()));
+    const filteredUsers = mockData.users.filter((user) => user.name.toLowerCase().includes(query.toLowerCase()));
     return HttpResponse.json({ users: filteredUsers });
   }),
 
@@ -101,43 +38,7 @@ const handlers = {
       });
     }
 
-    const users = [
-      {
-        id: 1,
-        name: "김철수",
-        email: "kim@example.com",
-        role: "admin",
-        profile: {
-          bio: "시니어 개발자",
-          location: "서울",
-          joinDate: "2020-01-15",
-        },
-      },
-      {
-        id: 2,
-        name: "이영희",
-        email: "lee@example.com",
-        role: "user",
-        profile: {
-          bio: "프론트엔드 개발자",
-          location: "부산",
-          joinDate: "2021-03-20",
-        },
-      },
-      {
-        id: 3,
-        name: "박민수",
-        email: "park@example.com",
-        role: "user",
-        profile: {
-          bio: "백엔드 개발자",
-          location: "대구",
-          joinDate: "2022-07-10",
-        },
-      },
-    ];
-
-    const user = users.find((u) => u.id === Number(id));
+    const user = mockData.users.find((u) => u.id === Number(id));
 
     if (!user) {
       await delay(300);
