@@ -24,7 +24,68 @@ export const getUsers = http.get("/api/users", async () => {
       email: "park@example.com",
       role: "user",
     },
+    {
+      id: 4,
+      name: "아이유",
+      email: "iu@example.com",
+      role: "user",
+    },
+    {
+      id: 5,
+      name: "김아이유",
+      email: "kimiu@example.com",
+      role: "admin",
+    },
   ]);
+});
+
+// 사용자 검색 API (새로 추가)
+export const searchUsers = http.get("/api/users/search", async ({ request }) => {
+  const url = new URL(request.url);
+  const query = url.searchParams.get("q") || "";
+
+  await delay(300); // 검색 지연 시간
+
+  if (!query) {
+    return HttpResponse.json({ users: [] });
+  }
+
+  const allUsers = [
+    {
+      id: 1,
+      name: "김철수",
+      email: "kim@example.com",
+      role: "admin",
+    },
+    {
+      id: 2,
+      name: "이영희",
+      email: "lee@example.com",
+      role: "user",
+    },
+    {
+      id: 3,
+      name: "박민수",
+      email: "park@example.com",
+      role: "user",
+    },
+    {
+      id: 4,
+      name: "아이유",
+      email: "iu@example.com",
+      role: "user",
+    },
+    {
+      id: 5,
+      name: "김아이유",
+      email: "kimiu@example.com",
+      role: "admin",
+    },
+  ];
+
+  const filteredUsers = allUsers.filter((user) => user.name.toLowerCase().includes(query.toLowerCase()));
+
+  return HttpResponse.json({ users: filteredUsers });
 });
 
 // 특정 사용자 정보를 가져오는 API

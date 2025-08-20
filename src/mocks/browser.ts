@@ -1,16 +1,17 @@
-import { setupWorker } from 'msw/browser'
-import { 
-  getUsers, 
-  getUserById, 
-  createUser, 
-  updateUser, 
-  deleteUser, 
+import { setupWorker } from "msw/browser";
+import {
+  getUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
   getPosts,
   searchPosts,
+  searchUsers,
   networkErrorTest,
   serverErrorTest,
-  slowResponseTest
-} from './handlers'
+  slowResponseTest,
+} from "./handlers";
 
 // MSW Worker를 설정합니다
 export const worker = setupWorker(
@@ -21,7 +22,8 @@ export const worker = setupWorker(
   deleteUser,
   getPosts,
   searchPosts,
+  searchUsers,
   networkErrorTest,
   serverErrorTest,
   slowResponseTest
-)
+);

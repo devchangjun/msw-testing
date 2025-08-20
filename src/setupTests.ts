@@ -56,4 +56,5 @@ if (typeof globalThis.MessageChannel === "undefined") {
   } as any;
 }
 
-// MSW 테스트 환경 설정
+// MSW 2.x 버전에서는 테스트 파일에서 직접 handlers를 사용
+// setupTests.ts에서는 전역 설정만 처리

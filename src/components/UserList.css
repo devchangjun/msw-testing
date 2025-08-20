@@ -157,12 +157,94 @@
   width: 80px;
 }
 
+/* 에러 배너 스타일 */
+.error-banner {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-banner .btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.error-banner .btn-sm:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* 검색 관련 스타일 */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 250px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.search-loading {
+  margin-left: 10px;
+  color: #666;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.no-results {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
 @media (max-width: 768px) {
   .user-list-content {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .user-list-header {
     flex-direction: column;
     gap: 1rem;
