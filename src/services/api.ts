@@ -1,4 +1,4 @@
-import { User, Post, CreateUserRequest, UpdateUserRequest } from "../types";
+import { User, CreateUserRequest, UpdateUserRequest } from "../types";
 
 const API_BASE_URL = "/api";
 
@@ -96,14 +96,4 @@ export const userApi = {
   },
 };
 
-// 게시물 관련 API
-export const postApi = {
-  // 게시물 목록 조회
-  getPosts: async (): Promise<Post[]> => {
-    const response = await fetch(`${API_BASE_URL}/posts`);
-    if (!response.ok) {
-      throw new Error("게시물 목록을 가져오는데 실패했습니다.");
-    }
-    return response.json();
-  },
-};
+// Post 관련 API는 제거됨

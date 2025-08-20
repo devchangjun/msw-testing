@@ -1,29 +1,15 @@
 import { setupWorker } from "msw/browser";
-import {
-  getUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-  getPosts,
-  searchPosts,
-  searchUsers,
-  networkErrorTest,
-  serverErrorTest,
-  slowResponseTest,
-} from "./handlers";
+import handlers from "./handlers";
 
 // MSW Worker를 설정합니다
 export const worker = setupWorker(
-  getUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-  getPosts,
-  searchPosts,
-  searchUsers,
-  networkErrorTest,
-  serverErrorTest,
-  slowResponseTest
+  handlers.getUsers,
+  handlers.getUserById,
+  handlers.createUser,
+  handlers.updateUser,
+  handlers.deleteUser,
+  handlers.searchUsers,
+  handlers.networkErrorTest,
+  handlers.serverErrorTest,
+  handlers.slowResponseTest
 );
