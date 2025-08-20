@@ -190,6 +190,181 @@
   min-height: 100vh;
 }
 
+/* 사용자 추가 섹션 */
+.add-user-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-user-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.add-user-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.add-user-button:active {
+  transform: translateY(0);
+}
+
+/* 사용자 추가 폼 */
+.add-user-form {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.add-user-form h3 {
+  text-align: center;
+  color: #2d3748;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-user-form .form-group {
+  margin-bottom: 20px;
+}
+
+.add-user-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.add-user-form input,
+.add-user-form select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.add-user-form input:focus,
+.add-user-form select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.add-user-form input:disabled,
+.add-user-form select:disabled {
+  background: rgba(247, 250, 252, 0.8);
+  color: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* 폼 액션 버튼 */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+  min-width: 120px;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cancel-button {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+  min-width: 120px;
+}
+
+.cancel-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
+}
+
+.cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 폼 메시지 */
+.form-error {
+  background: rgba(245, 101, 101, 0.1);
+  border: 1px solid rgba(245, 101, 101, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-error p {
+  color: #c53030;
+  margin: 0;
+  font-weight: 500;
+}
+
+.form-success {
+  background: rgba(72, 187, 120, 0.1);
+  border: 1px solid rgba(72, 187, 120, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-success p {
+  color: #38a169;
+  margin: 0;
+  font-weight: 500;
+}
+
 /* 검색 입력창 */
 .search-input-container {
   position: relative;
@@ -417,5 +592,19 @@
 
   .results-list h2 {
     font-size: 20px;
+  }
+
+  .add-user-form {
+    padding: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .submit-button,
+  .cancel-button {
+    min-width: 100%;
   }
 }
